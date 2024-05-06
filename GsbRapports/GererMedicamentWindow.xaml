@@ -1,0 +1,32 @@
+﻿<Window x:Class="GsbRapports.GererMedicamentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GsbRapports"
+        mc:Ignorable="d"
+        Title="GererMedicamentWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="58,47,0,0" TextWrapping="Wrap" Text="Famille médicament" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbFamille" HorizontalAlignment="Left" Margin="199,44,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbFamille_SelectionChanged"/>
+        <StackPanel RenderTransformOrigin="0.504,0.241" Margin="-55,123,-55,-123">
+            <DataGrid x:Name="dtg" AutoGenerateColumns="False" 
+           Height="205"  AlternatingRowBackground = "LightBlue" Width="766"  RenderTransformOrigin="-0.046,1.4" SelectionChanged="dtg_SelectionChanged" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Immatriculation"  
+                             Binding="{Binding id}" Foreground="#FFF17B7B" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Nom" 
+                             Binding="{Binding nomCommercial}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Composition" 
+                             Binding="{Binding composition}" />
+                    <DataGridTextColumn Header="Effets" 
+                             Binding="{Binding effets}" />
+                    <DataGridTextColumn Header="Contre indication" 
+                           Binding="{Binding contreIndications}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
+        <Button Content="Modifier" HorizontalAlignment="Left" Height="27" Margin="500,63,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" />
+    </Grid>
+</Window>
