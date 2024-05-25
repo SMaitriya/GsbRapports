@@ -19,9 +19,11 @@
 
                 </MenuItem>
                 <MenuItem Header="_médicaments">
-                    <MenuItem Header="_Gerer" Click="MenuItem_Click_3" />
+                    <MenuItem Header="_Voir" Click="MenuItem_Click_3" />
+                    <MenuItem Header="_Modifier" Click="MenuItem_Click_5"  />
                     <MenuItem Header="Ajouter" Click="MenuItem_Click_4"  />
-                    
+                    <MenuItem Header="Medicaments offerts" Click="MenuItem_Click_6" />
+
 
                 </MenuItem>
                 <MenuItem Header="_visiteurs">
@@ -39,21 +41,21 @@
         </DockPanel>
         <TextBox x:Name="txtBonjour" Width="150" Height="30" Margin="50,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFADE693"/>
         <StackPanel  Orientation ="Horizontal" Margin="0,100,0,0" >
-            <StackPanel Height="100" Margin="0" x:Name="stPanel">
+            <StackPanel Height="100" x:Name="stPanel" Width="326">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Login" Margin="20,0,0,0"/>
-                    <TextBox x:Name ="txtLogin" Width="50" Margin="60,0,0,0"/>
+                    <TextBox x:Name ="txtLogin" Width="57" Margin="60,0,0,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Mot de passe" Margin="20,0,0,0"/>
-                    <PasswordBox x:Name ="txtMdp" Width="50" Margin="20,0,0,0"/>
-                    <Button x:Name="btnValider" Margin="30,0,0,0" Width="50" Content="Valider" Click="btnValider_Click"/>
+                    <PasswordBox x:Name ="txtMdp" Width="57" Margin="20,0,0,0"/>
+                    <Button x:Name="btnValider" Margin="30,0,0,0" Width="69" Content="Valider" Click="btnValider_Click" Height="21"  IsDefault="True"/>
                 </StackPanel>
 
             </StackPanel>
-            <Image Height="200" Width="241" Source="gsb.jpg" Margin="80,50,600,59" x:Name="imgLogo" />
+            <Image Height="200" Width="241" Source="gsb.jpg" x:Name="imgLogo" />
         </StackPanel>
-       
+
 
     </Grid>
 </Window>

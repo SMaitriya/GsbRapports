@@ -53,8 +53,8 @@ namespace GsbRapports
 
                 byte[] tab = await wb.UploadValuesTaskAsync(url, "POST", parametre);
                 string reponse = UnicodeEncoding.UTF8.GetString(tab);
-                //  string ticket = reponse.Substring(2, reponse.Length - 2);
-                //  this.laSecretaire.ticket = ticket;
+                 string ticket = reponse.Substring(2, reponse.Length - 2);
+                 this.laSecretaire.ticket = ticket;
 
                 MessageBox.Show("bien ajouté");
 

@@ -71,6 +71,12 @@
     <Compile Include="majFamilleWindow.xaml.cs">
       <DependentUpon>majFamilleWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="medicamentDateWindow.xaml.cs">
+      <DependentUpon>medicamentDateWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierMedicamentWindow.xaml.cs">
+      <DependentUpon>ModifierMedicamentWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VoirFamillesWindow.xaml.cs">
       <DependentUpon>VoirFamillesWindow.xaml</DependentUpon>
     </Compile>
@@ -99,6 +105,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="majFamilleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="medicamentDateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModifierMedicamentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

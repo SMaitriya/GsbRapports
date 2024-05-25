@@ -85,18 +85,20 @@ namespace GsbRapports
                 string hash = this.laSecretaire.getHashTicketMdp();
 
 
-                if (Regex.IsMatch(idMedicament, )
-                if () if (Regex.IsMatch(this.txtId.Text, @"^[A-Z]{3}$") && (this.txtId.Text[0] == this.txtLibelle.Text[0]))
+                if (!(Regex.IsMatch(idMedicament, @"^[A-Z]+$") && idMedicament.Substring(0, 2).Equals(Nom.Substring(0, 2), StringComparison.OrdinalIgnoreCase))) //chatgpt
+                {
 
-                        if (string.IsNullOrEmpty(Nom) || string.IsNullOrEmpty(Effets) || string.IsNullOrEmpty(Composition) || string.IsNullOrEmpty(ContreIndication) || string.IsNullOrEmpty(idMedicament))
+                    MessageBox.Show("Erreur : L'immatriculation du médicament doit être entièrement en majuscules et les deux premières lettres doivent correspondre au nom.");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(Nom) || string.IsNullOrEmpty(Effets) || string.IsNullOrEmpty(Composition) || string.IsNullOrEmpty(ContreIndication) || string.IsNullOrEmpty(idMedicament))
 
                 {
                     MessageBox.Show("Ne pas laissez de champs vides !");
                     return;
                 }
 
-
-                
                 else { 
 
                     string url = this.site + "medicaments?ticket=" + hash + "&idMedicament=" + idMedicament + "&effets=" + Effets + "&contreIndications=" + ContreIndication + "&composition=" + Composition + "&idFamille=" + idFamille;
@@ -107,9 +109,6 @@ namespace GsbRapports
                     parametre.Add("effets", Effets);
                     parametre.Add("composition", Composition);
                     parametre.Add("contreIndications", ContreIndication);
-
-
-
 
                     byte[] tab = await wb.UploadValuesTaskAsync(url, "POST", parametre);
                     string reponse = UnicodeEncoding.UTF8.GetString(tab);
@@ -122,7 +121,6 @@ namespace GsbRapports
 
                 }
                 
-
             }
             else
             {

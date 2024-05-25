@@ -23,5 +23,9 @@ namespace dllRapportVisites
             this.contreIndications = contreindic;
             this.idFamille = f;
         }
+
+        public Medicament()
+        {
+        }
     }
 }

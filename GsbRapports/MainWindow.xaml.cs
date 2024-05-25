@@ -128,5 +128,17 @@ namespace GsbRapports
             AjouterMedicamentWindow a = new AjouterMedicamentWindow(wb, site, laSecretaire);
             a.Show();
         }
+
+        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        {
+            ModifierMedicamentWindow m = new ModifierMedicamentWindow(wb, site, laSecretaire);
+            m.Show();
+        }
+
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            medicamentDateWindow d = new medicamentDateWindow(wb, site, laSecretaire);
+            d.Show();
+        }
     }
 }

@@ -1,0 +1,36 @@
+﻿<Window x:Class="GsbRapports.ModifierMedicamentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GsbRapports"
+        mc:Ignorable="d"
+        Title="ModifierMedicamentWindow" Height="450" Width="819">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="58,47,0,0" TextWrapping="Wrap" Text="Famille médicament" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbFamille" HorizontalAlignment="Left" Margin="199,44,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbFamille_SelectionChanged" />
+
+        <TextBlock HorizontalAlignment="Right" Margin="0,46,301,0" TextWrapping="Wrap" Text="Médicament" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbMedicament" HorizontalAlignment="Left" Margin="540,44,0,0" VerticalAlignment="Top" Width="120" 
+                  DataContext="{Binding ElementName=cmbFamille, Path=SelectedItem}" DisplayMemberPath="nomComercial" SelectionChanged="cmbMedicament_SelectionChanged" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="83,121,0,0" TextWrapping="Wrap" Text="Composition" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="26,142,0,0" TextWrapping="Wrap" x:Name="txtComp" VerticalAlignment="Top" Width="181" Height="19"  
+                 DataContext="{Binding ElementName=cmbMedicament, Path=SelectedItem}" Text="{Binding composition}" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="338,121,0,0" TextWrapping="Wrap" Text="Effets" VerticalAlignment="Top" RenderTransformOrigin="1.344,0.901"/>
+        <TextBox HorizontalAlignment="Left" Margin="237,142,0,0" TextWrapping="Wrap" x:Name="txtEffets" VerticalAlignment="Top" Width="253" Height="19" 
+                 DataContext="{Binding ElementName=cmbMedicament, Path=SelectedItem}" Text="{Binding effets}" />
+
+        <TextBlock HorizontalAlignment="Left" Margin="600,121,0,0" TextWrapping="Wrap" Text="Contre Indication" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="520,142,0,0" TextWrapping="Wrap" x:Name="txtContreIndic" VerticalAlignment="Top" Width="270" Height="19" 
+                 DataContext="{Binding ElementName=cmbMedicament, Path=SelectedItem}" Text="{Binding contreIndications}" />
+
+        <Button Content="Modifier" HorizontalAlignment="Left" Margin="654,217,0,0" VerticalAlignment="Top" Height="26" Width="58" Click="Button_Click" />
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="55" Margin="10,118,0,0" VerticalAlignment="Top" Width="213"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="54" Margin="222,118,0,0" VerticalAlignment="Top" Width="280">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="279,-1,-295,-1"/>
+        </Border>
+    </Grid>
+</Window>
